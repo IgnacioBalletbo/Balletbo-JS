@@ -1,8 +1,15 @@
 // Introducción de la funcionalidad de la página
 alert("Este Programa esta conectado a la red del administratum del Imperio de la Humanidad. Tiene como finalidad, educar a nuevos viajeros que se aventuren en este universo tan basto.");
 
-// Creo una variable para que el usuario introduzca información
-let conocimientoprevio = prompt("!Hola¡ Soy el Tecnomago I171023 a cargo de esta base de datos del administratum, tengo una pregunta antes de comenzar. Responda con si o no ¿Posees algún conocimiento sobre este universo?");
+// Creo una función para que salude al usuario
+function saludar(nombre) {
+    alert("!Hola¡ "+nombre+" Soy el Tecnomago I171023 a cargo de esta base de datos del administratum");
+}
+// llamo a la función y le pido información al usuario
+saludar(prompt("Primero debe identificarse:"));
+
+// 
+let conocimientoprevio = prompt("Antes de comenzar, responda con 'si o no' ¿Posees algún conocimiento sobre este universo?")
 
 // Creo una condición para filtrar a los tipos de usuarios que ingresen a la página
 if (conocimientoprevio == "si") {
@@ -15,12 +22,20 @@ if (conocimientoprevio == "si") {
 const armeriaspacemarine = ["Rifle Bólter", "Lanzallamas", "Pistola Bólter", "Rifle de Fusión", "Rifle de Plasma", "Escopeta", "Rifle de Francotirador"];
 
 // Creo la función para ver los elementos del array
-const verararmeria = () => {
+const verarmeria = () => {
     console.log(armeriaspacemarine.join(", "));
 }
 
+// creo la función para saltar la soga
+function saltarlasoga(tiempo) {
+    for (let i = 1 ; i <= tiempo ; i++) {
+        alert("El Orko saltó la soga "+i+" vez(ces).");
+    }
+    alert("El Orko murió de vejez porque no pudo luchar por estar saltando la soga.");
+}
+
 // Creo la Variable para pedir los datos y el usuario navegue por el menú
-let menu = parseInt(prompt(" Administratum del Imperio de la Humanidad. Seleccione el número del índice de la base de datos a la que quiere acceder. 1- Emperador de la Humanidad.  2- Primarcas.  3- Adeptus Astartes.  4- Adepta Sororita.  5- Armería de los Adeptus Astartes  6-.....*datos corruptos*....Tecnomago I171023: Hay datos que no están completos, se irán actualizando con el tiempo.  8- Salir. "));
+let menu = parseInt(prompt(" Administratum del Imperio de la Humanidad. Seleccione el número del índice de la base de datos a la que quiere acceder. 1- Emperador de la Humanidad.  2- Primarcas.  3- Adeptus Astartes.  4- Adepta Sororita.  5- Armería de los Adeptus Astartes  6-.....*datos corruptos*....Tecnomago I171023: Hay datos que no están completos, se irán actualizando con el tiempo.  7- [Saltar la Soga]  8- Salir. "));
 
 // creo el menú con el ciclo while para que se siga viendo después de entrar en las opciones
 while (menu != 8 ) {
@@ -38,7 +53,10 @@ while (menu != 8 ) {
             alert("El Adepta Sororitas es una hermandad de guerreras de élite, conocidas como Hermanas de Batalla, que son criadas desde la infancia para adorar al Emperador de la Humanidad siguiendo el dogma de la Eclesiarquía. Su fanática devoción e inquebrantable pureza son un bastión contra la corrupción, la herejía y los ataques alienígenas, y una vez entran en batalla no se detienen ante nada hasta que sus enemigos hayan sido purgados del Imperio por la santísima trinidad del bólter, el lanzallamas y el rifle de fusión. Asimismo, son la Cámara Militante del Ordo Hereticus de la Inquisición: los temidos Cazadores de Brujas.");
             break
         case 5:
-            verararmeria();
+            verarmeria();
+            break;
+        case 7:
+            saltarlasoga(prompt("¿Cuántas veces quiere que el Orko salte la soga?:"));
             break;
         case 8:
             break;
@@ -47,6 +65,6 @@ while (menu != 8 ) {
             break;
     }
     // llamo a la variable para que pregunte después de que se termine de navegar por el switch
-    menu = parseInt(prompt(" Administratum del Imperio de la Humanidad. Seleccione el número del índice de la base de datos a la que quiere acceder. 1- Emperador de la Humanidad.  2- Primarcas.  3- Adeptus Astartes.  4- Adepta Sororita.  5- Armería de los Adeptus Astartes  6-.....*datos corruptos*....Tecnomago I171023: Hay datos que no están completos, se irán actualizando con el tiempo.  8- Salir. "));
+    menu = parseInt(prompt(" Administratum del Imperio de la Humanidad. Seleccione el número del índice de la base de datos a la que quiere acceder. 1- Emperador de la Humanidad.  2- Primarcas.  3- Adeptus Astartes.  4- Adepta Sororita.  5- Armería de los Adeptus Astartes  6-.....*datos corruptos*....Tecnomago I171023: Hay datos que no están completos, se irán actualizando con el tiempo.  7- [Saltar la Soga]  8- Salir. "));
 }
 
